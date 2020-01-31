@@ -31,7 +31,7 @@ router.post('/add', async (req, res) => {
         const accounts = await db('accounts').insert(bodyData);
         res.status(201).json({ Message: 'Account Successfully Created', accounts});
     }catch(err){
-        res.status(500).json({message: 'failed to post account'})
+        res.status(500).json({ message: 'failed to post account', accounts})
     }
 })
 
